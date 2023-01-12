@@ -142,7 +142,7 @@ pr_effects(primary_hf, threshold)
 pr_effects(primary_nonhf, threshold)
 data_text <- data.frame(
     study = c("CASTLE-AF", "HF Meta-Analysis", "Non-HF Meta-Analysis"),
-    x = rep(-1.7, 3), y = rep(3.2, 3),
+    x = rep(-1.7, 3), y = rep(3, 3),
     label = c(
         paste0(
             "Median RR = ",
@@ -236,7 +236,7 @@ pr_effects(death_hf, threshold)
 pr_effects(death_nonhf, threshold)
 data_text <- data.frame(
     study = c("CASTLE-AF", "HF Meta-Analysis", "Non-HF Meta-Analysis"),
-    x = rep(-1.7, 3), y = rep(3.2, 3),
+    x = rep(-1.7, 3), y = rep(3, 3),
     label = c(
         paste0(
             "Median RR = ",
