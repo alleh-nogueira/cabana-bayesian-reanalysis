@@ -21,8 +21,8 @@ outcomes <- data.frame(
 
 # Set priors
 read_xlsx("data-01_empirical-priors.xlsx")
-castle <- prior(normal(-0.702, 0.222), class = "b")
-hf <- prior(normal(-0.763, 0.221), class = "b")
+castle <- prior(normal(-0.702, 0.314), class = "b")
+hf <- prior(normal(-0.763, 0.312), class = "b")
 nonhf <- prior(normal(-0.408, 0.561), class = "b")
 
 # Fit Bayesian models for primary endpoint
@@ -146,19 +146,19 @@ data_text <- data.frame(
     label = c(
         paste0(
             "Median RR = ",
-            rr_from_or(exp(-0.33), 101 / 1096),
-            "\n95% CrI: (", rr_from_or(exp(-0.57), 101 / 1096),
-            "; ", rr_from_or(exp(-0.09), 101 / 1096), ")\n\n",
-            "Pr(Major Benefit) = 92%\n", "Pr(Minor Benefit) = 8%\n",
-            "Pr(Any Harm) = 0%"
+            rr_from_or(exp(-0.25), 101 / 1096),
+            "\n95% CrI: (", rr_from_or(exp(-0.52), 101 / 1096),
+            "; ", rr_from_or(exp(0.02), 101 / 1096), ")\n\n",
+            "Pr(Major Benefit) = 77%\n", "Pr(Minor Benefit) = 20%\n",
+            "Pr(Minor Harm) = 3%\n", "Pr(Major Harm) = 0%"
         ),
         paste0(
             "Median RR = ",
-            rr_from_or(exp(-0.35), 101 / 1096),
-            "\n95% CrI: (", rr_from_or(exp(-0.60), 101 / 1096),
-            "; ", rr_from_or(exp(-0.11), 101 / 1096), ")\n\n",
-            "Pr(Major Benefit) = 94%\n", "Pr(Minor Benefit) = 6%\n",
-            "Pr(Any Harm) = 0%"
+            rr_from_or(exp(-0.27), 101 / 1096),
+            "\n95% CrI: (", rr_from_or(exp(-0.54), 101 / 1096),
+            "; ", rr_from_or(exp(0), 101 / 1096), ")\n\n",
+            "Pr(Major Benefit) = 80%\n", "Pr(Minor Benefit) = 17%\n",
+            "Pr(Minor Harm) = 3%\n", "Pr(Major Harm) = 0%"
         ),
         paste0(
             "Median RR = ", 
@@ -240,19 +240,19 @@ data_text <- data.frame(
     label = c(
         paste0(
             "Median RR = ",
-            rr_from_or(exp(-0.39), 101 / 1096),
-            "\n95% CrI: (", rr_from_or(exp(-0.67), 101 / 1096),
-            "; ", rr_from_or(exp(-0.10), 101 / 1096), ")\n\n",
-            "Pr(Major Benefit) = 95%\n", "Pr(Minor Benefit) = 5%\n",
-            "Pr(Any Harm) = 0%"
+            rr_from_or(exp(-0.30), 101 / 1096),
+            "\n95% CrI: (", rr_from_or(exp(-0.63), 101 / 1096),
+            "; ", rr_from_or(exp(0.02), 101 / 1096), ")\n\n",
+            "Pr(Major Benefit) = 83%\n", "Pr(Minor Benefit) = 14%\n",
+            "Pr(Minor Harm) = 3%\n", "Pr(Major Harm) = 0%"
         ),
         paste0(
             "Median RR = ",
-            rr_from_or(exp(-0.41), 101 / 1096),
-            "\n95% CrI: (", rr_from_or(exp(-0.69), 101 / 1096),
-            "; ", rr_from_or(exp(-0.12), 101 / 1096), ")\n\n",
-            "Pr(Major Benefit) = 96%\n", "Pr(Minor Benefit) = 4%\n",
-            "Pr(Any Harm) = 0%"
+            rr_from_or(exp(-0.32), 101 / 1096),
+            "\n95% CrI: (", rr_from_or(exp(-0.65), 101 / 1096),
+            "; ", rr_from_or(exp(-0.01), 101 / 1096), ")\n\n",
+            "Pr(Major Benefit) = 85%\n", "Pr(Minor Benefit) = 12%\n",
+            "Pr(Minor Harm) = 3%\n", "Pr(Major Harm) = 0%"
         ),
         paste0(
             "Median RR = ",

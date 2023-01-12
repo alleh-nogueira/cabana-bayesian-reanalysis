@@ -1,7 +1,7 @@
 set.seed(1)
 options(digits = 2)
 if (!require("pacman")) install.packages("pacman")
-p_load("tidyverse", "writexl", "cowplot", "ggdist")
+p_load("tidyverse", "writexl", "cowplot", "ggdist", "brms")
 
 # Compute OR given RR and risk in control group
 or_from_rr <- function(risk_ratio, untreated_risk) {
@@ -56,11 +56,11 @@ empirical_priors <- data.frame(
         log(or_from_rr(0.67, 8 / 337))
     ),
     se = c(
-        se_from_events(51, 82, 179, 184),
+        se_from_events(51, 82, 179, 184) * sqrt(2),
         se_from_ci(
             log(or_from_rr(0.35, 65 / 335)),
             log(or_from_rr(0.76, 65 / 335))
-        ),
+        ) * sqrt(2),
         se_from_ci(
             log(or_from_rr(0.23, 8 / 337)),
             log(or_from_rr(1.99, 8 / 337))
@@ -205,7 +205,11 @@ scale_linetype_manual(
     limits = c("CASTLE-AF", "HF Meta-Analysis", "Non-HF Meta-Analysis")
 ) +
 scale_x_continuous(expand = c(0, 0)) +
-scale_y_continuous(limits = c(0, 2), breaks = c(0, 1, 2), expand = c(0, 0)) +
+scale_y_continuous(
+    limits = c(0, 1.5),
+    breaks = seq(0, 1.5, 0.5),
+    expand = c(0, 0)
+) +
 theme_bw() +
 theme(
     legend.position = c(0.8, 0.5),

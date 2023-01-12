@@ -22,8 +22,8 @@ outcomes <- data.frame(
 # Set flat prior
 flat <- prior(normal(0, 100), class = "b")
 # Set evidence-based priors
-castle <- prior(normal(-0.702, 0.222), class = "b")
-hf <- prior(normal(-0.763, 0.221), class = "b")
+castle <- prior(normal(-0.702, 0.314), class = "b")
+hf <- prior(normal(-0.763, 0.312), class = "b")
 nonhf <- prior(normal(-0.408, 0.561), class = "b")
 # Set theoretical priors
 neutral_strong <- prior(normal(0, 0.207), class = "b")
